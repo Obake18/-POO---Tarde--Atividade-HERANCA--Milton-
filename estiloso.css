@@ -1,0 +1,41 @@
+/* Estilo para o body (fundo preto amoled) */
+body {
+    background-color: #000; /* Fundo preto amoled */
+    color: #fff; /* Letras brancas */
+    font-family: Arial, sans-serif; /* Fonte */
+}
+
+/* Estilo para o botão */
+button {
+    background-color: #333; /* Cor de fundo escura */
+    color: #fff; /* Letras brancas */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Remove a borda padrão */
+    border-radius: 10px; /* Bordas arredondadas */
+    cursor: pointer; /* Ícone de cursor ao passar o mouse */
+
+    /* Efeito de brilho ao passar o mouse (sombras) */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+button:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Brilho com sombra */
+}
+
+/* Estilo para o texto (letras pulsantes) */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Aplicar animação de pulso ao texto */
+button span {
+    animation: pulse 1s infinite;
+}

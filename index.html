@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="estiloso.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Adicionar Alunos</title>
 </head>
 <body>
+    <!-- Botão para adicionar aluno -->
+    <button id="adicionarAlunoButton">Adicionar Aluno</button>
+
+    <!-- Lista de alunos -->
+    <ul id="listaDeAlunos"></ul>
+
     <script src="classes.js"></script>
     <script src="testes.js"></script>
+
+    <script>
+        /*
+         * Função para adicionar um aluno à lista de alunos.
+         */
+        function adicionarAluno() {
+            // Cria uma instância de aluno com informações fictícias
+            let aluno = new Aluno('Nome do Aluno', '111.111.111.11', '01-01-2000', 'Matrícula');
+
+            // Obtém a lista de alunos
+            let listaDeAlunos = document.getElementById('listaDeAlunos');
+
+            // Cria um elemento de lista (li) para exibir o aluno
+            let alunoItem = document.createElement('li');
+            alunoItem.textContent = `Nome: ${aluno.nome}, CPF: ${aluno.cpf}, Data de Nascimento: ${aluno.dataDeNascimento}, Matrícula: ${aluno.matricula}`;
+
+            // Adiciona o elemento de lista à lista de alunos
+            listaDeAlunos.appendChild(alunoItem);
+        }
+
+        // Associa a função ao botão
+        document.getElementById('adicionarAlunoButton').addEventListener('click', adicionarAluno);
+    </script>
 </body>
 </html>
